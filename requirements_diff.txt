@@ -1,0 +1,7 @@
+--- requirements.txt (原始)
+
+
++++ requirements.txt (修改后)
+customtkinter
+pyserial
+psutil
