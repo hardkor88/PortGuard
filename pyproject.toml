@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portguard"
+version = "2.0.0"
+description = "Менеджер подключённых устройств Windows: USB, COM, HID, Bluetooth, звук, дисплеи"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "customtkinter>=5.2",
+    "pyserial>=3.5",
+    "psutil>=5.9",
+]
+
+[project.scripts]
+portguard = "portguard.cli:main"
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.0", "pillow>=10.0"]
+
+[tool.setuptools.packages.find]
+include = ["portguard*"]
