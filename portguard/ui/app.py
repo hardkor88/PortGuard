@@ -18,7 +18,7 @@ from ..core.elevation import is_admin, relaunch_as_admin
 from ..core.holders import HolderReport, find_port_holders
 from ..core.hotplug import DeviceWatcher
 from ..core.model import CATEGORIES, Device, summary
-from ..core.report import save_report, summary_text
+from ..core.report import save_report
 from . import theme
 from .details import DetailsPanel
 from .monitor_window import SerialMonitorWindow
@@ -681,10 +681,6 @@ class PortGuardApp(ctk.CTk):
             messagebox.showerror("Отчёт", f"Не удалось сохранить: {exc}")
             return
         self._log(f"Отчёт сохранён: {path}", "info")
-
-    def _copy_summary(self) -> None:
-        self.clipboard_clear()
-        self.clipboard_append(summary_text(self.devices))
 
     # ------------------------------------------------------------------
     # Права и журнал
